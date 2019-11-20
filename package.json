@@ -2,6 +2,7 @@
     "name": "openssl-configuration-file",
     "displayName": "OpenSSL Configuration Syntax",
     "description": "Syntax highlighting for OpenSSL configuration files (openssl.cnf)",
+    "publisher": "geeksharp",
     "author": {
         "name": "Scott Anderson",
         "email": "scott@geeksharp.com"
