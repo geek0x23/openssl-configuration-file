@@ -1,0 +1,93 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "OpenSSL Configuration",
+    "scopeName": "source.cnf",
+    "patterns": [
+        {
+            "include": "#section"
+        },
+        {
+            "include": "#key-value"
+        },
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#variable"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#escapes"
+        }
+    ],
+    "repository": {
+        "section": {
+            "name": "entity.name.section.group-title.openssl",
+            "match": "^(\\[)(.*?)(\\])",
+            "captures": {
+                "1": {
+                    "name": "punctuation.definition.entity.openssl"
+                },
+                "3": {
+                    "name": "punctuation.definition.entity.openssl"
+                }
+            }
+        },
+        "key-value": {
+            "captures": {
+                "1": {
+                    "name": "keyword.other.definition.openssl"
+                },
+                "2": {
+                    "name": "punctuation.separator.key-value.openssl"
+                }
+            },
+            "match": "\\b([\\w,;\\.]+)\\b\\s*(=)"
+        },
+        "comment": {
+            "begin": "(^\\s+)?(?<=^|\\W)(?<!-)(?=#)(?!#{)",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.whitespace.comment.leading.openssl"
+                }
+            },
+            "end": "(?!\\G)",
+            "patterns": [
+                {
+                    "begin": "#",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.comment.openssl"
+                        }
+                    },
+                    "end": "$",
+                    "name": "comment.line.number-sign.openssl"
+                }
+            ]
+        },
+        "variable": {
+            "match": "(\\${?)([\\w,;:\\.]+)(}?)",
+            "captures": {
+                "1": {
+                    "name": "punctuation.definition.variable.openssl"
+                },
+                "2": {
+                    "name": "variable.name.openssl"
+                },
+                "3": {
+                    "name": "punctuation.definition.variable.openssl"
+                }
+            }
+        },
+        "keywords": {
+            "match": "(\\.include|\\.pragma)",
+            "name": "keyword.control.openssl"
+        },
+        "escapes": {
+            "name": "constant.character.escape.openssl",
+            "match": "\\\\."
+        }
+    }
+}

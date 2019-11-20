@@ -1,0 +1,47 @@
+{
+    "name": "openssl-configuration-file",
+    "displayName": "OpenSSL Configuration Syntax",
+    "description": "Syntax highlighting for OpenSSL configuration files (openssl.cnf)",
+    "author": {
+        "name": "Scott Anderson",
+        "email": "scott@geeksharp.com"
+    },
+    "keywords": [
+        "openssl",
+        "cnf"
+    ],
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/swaj/openssl-configuration-file.git"
+    },
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.39.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "openssl",
+                "aliases": [
+                    "OpenSSL Configuration",
+                    "openssl"
+                ],
+                "extensions": [
+                    ".cnf"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "openssl",
+                "scopeName": "source.cnf",
+                "path": "./syntaxes/openssl.tmLanguage.json"
+            }
+        ]
+    }
+}
